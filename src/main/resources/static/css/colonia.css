@@ -1,0 +1,29 @@
+@charset "ISO-8859-1";
+
+.jumbotron-colonia {
+	padding: 2rem 1rem;
+	margin-bottom: 2rem;
+	background-color: #00aae4;
+	border-radius: 0.3rem;
+}
+
+.blank {
+	color: white;
+}
+
+body {
+	padding: 20px 20px;
+}
+
+.results tr[visible='false'], .no-result {
+	display: none;
+}
+
+.results tr[visible='true'] {
+	display: table-row;
+}
+
+.counter {
+	padding: 8px;
+	color: #ccc;
+}

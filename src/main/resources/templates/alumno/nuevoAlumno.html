@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="base::head">
+<meta charset="UTF-8" />
+</head>
+<body>
+
+	<header th:replace="base::header"></header>
+
+	<div class="container">
+		<div class="card">
+			<div class="card-header">
+				<h3>Nuevo ALumno</h3>
+			</div>
+			<div class="col-md-12">
+			
+				<form th:action="@{/guardarAlumno}" th:object="${alumno}" method="post">
+					 
+					
+
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label">Nombre</label>
+						<div class="col-sm-6">
+							 <input type="text" size="30" th:field="*{nombre}"> *
+							 <small class="form-text text-danger" th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}"></small>
+						</div>
+					</div>
+					
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label">Apellido</label>
+						<div class="col-sm-6">
+							<input type="text"  size="30" th:field="*{apellido}"> *
+							<small class="form-text text-danger" th:if="${#fields.hasErrors('apellido')}" th:errors="*{apellido}"></small>
+						</div>
+					</div>
+					
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label">DNI</label>
+						<div class="col-sm-6">
+							<input type="text"  size="30" th:field="*{dni}"> *
+							<small class="form-text text-danger" th:if="${#fields.hasErrors('dni')}" th:errors="*{dni}"></small>
+						</div>
+					</div>
+					
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label">Numero de Colono</label>
+						<div class="col-sm-6">
+							<input type="text"  size="30" th:field="*{numero}"> 
+						</div>
+					</div>
+					
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label">Fecha Nacimiento:</label>
+						<div class="col-sm-6">
+							<input type="date"  size="30" value="2010-01-01"  th:field="*{fechaNacimiento}">
+						</div>
+					</div>
+					
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label">Obra Social</label>
+						<div class="col-sm-6">
+							<input type="text"  size="30" th:field="*{obraSocial}">
+						</div>
+					</div>
+
+					
+					<!-- DATOS MAMA -->
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label">Nombre y Apellido de la Mama</label>
+						<div class="col-sm-6">
+							<input type="text"  size="30" th:field="*{nombreMama}"> *
+							<small class="form-text text-danger" th:if="${#fields.hasErrors('nombreMama')}" th:errors="*{nombreMama}"></small>
+						</div>
+					</div>
+
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label">DNI de la Mama</label>
+						<div class="col-sm-6">
+							<input type="text"  size="30" th:field="*{dniMama}"> 
+						</div>
+					</div>
+
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label">Telefono de la Mama</label>
+						<div class="col-sm-6">
+							<input type="text"  size="30" th:field="*{telefonoMama}"> *
+							<small class="form-text text-danger"  th:if="${#fields.hasErrors('telefonoMama')}" th:errors="*{telefonoMama}"></small>
+						</div>
+					</div>
+
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label">Mail de la Mama</label>
+						<div class="col-sm-6">
+							<input type="text"  size="30" th:field="*{mailMama}"> *
+							<small class="form-text text-danger" th:if="${#fields.hasErrors('mailMama')}" th:errors="*{mailMama}"></small>
+						</div>
+					</div>
+
+					<!-- DATOS PAPA -->
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label">Nombre y Apellido del Papa</label>
+						<div class="col-sm-6">
+							<input type="text"  size="30" th:field="*{nombrePapa}">
+						</div>
+					</div>
+
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label">DNI del Papa</label>
+						<div class="col-sm-6">
+							<input type="text"  size="30" th:field="*{dniPapa}">
+						</div>
+					</div>
+
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label">Telefono del Papa</label>
+						<div class="col-sm-6">
+							<input type="text"  size="30" th:field="*{telefonoPapa}">
+						</div>
+					</div>
+
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label">Mail del Papa</label>
+						<div class="col-sm-6">
+							<input type="text"  size="30" th:field="*{mailPapa}">
+						</div>
+					</div>
+																			
+					<div class="form-group row" align="center">
+						<div class="col-sm-6">
+							<input type="submit" value="Añadir Alumno"
+								class="btn btn-outline-primary"  style="margin-right: 10px">  <a th:href="@{listAlumnos}"
+								class="btn btn-outline-danger">Cancelar</a>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+	<footer th:replace="base::footer"></footer>
+</body>
+</html>
+

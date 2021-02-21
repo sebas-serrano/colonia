@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="base::head">
+<meta charset="UTF-8" />
+</head>
+<body>
+
+	<header th:replace="base::header"></header>
+
+	<div class="container">
+		<div class="card">
+			<div class="card-header" align="center">
+				<h3>Lista de Grupos</h3>
+			</div>
+			<div class="card-body">
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th style="text-align: center;">Numero</th>
+							<th style="text-align: center;">Nombre</th>
+							<th style="text-align: center;">Profe</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="grupo: ${grupos}">
+							<td style="text-align: center;" th:text="${grupo.id}"></td>
+							<td style="text-align: center;"th:text="${grupo.nombre}"></td>
+							<td style="text-align: center;" th:text="${grupo.profesor.nombre}"></td>
+							<td style="text-align: center;"  ><a th:href="@{/editGrupo/} + ${grupo.id}" th:text="'Editar'" class="btn btn-outline-danger"></a></td>
+						</tr>
+					</tbody>
+				</table>
+				
+			</div>
+		</div>
+	</div>
+
+	<footer th:replace="base::footer"></footer>
+</body>
+</html>

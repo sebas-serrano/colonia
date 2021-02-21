@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="base::head">
+<meta charset="UTF-8" />
+</head>
+<body>
+
+	<header th:replace="base::header"></header>
+
+	<div class="container">
+		<div class="card">
+			<div class="card-header">
+				<h3>Aclaraciones de Pago</h3>
+			</div>
+			<div class="card-body">
+				<form th:action="@{/guardarPago/{id}(id=${alumno.id})}" th:object="${alumno}" method="post">
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label">Nombre</label>
+						<div class="col-sm-6">
+							<input type="text" th:field="*{nombre}" disabled="disabled" > * <small
+								class="form-text text-danger"
+								th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}"></small>
+						</div>
+					</div>
+
+					<div class="form-group row"  >
+						<label class="col-sm-2 col-form-label">Aclaraciones de Pago</label>						
+						<div class="col-sm-6">
+							<textarea th:field="*{pagos}" name="aclaracionesPagos" cols="60" rows="20" ></textarea>
+						</div>
+					</div>
+					
+					<div class="form-group row" align="center">
+						<div class="col-sm-6">
+							<input type="submit" value="Guardar Pago"
+								class="btn btn-outline-primary"  style="margin-right: 10px">  <a th:href="@{/listPagos}"
+								class="btn btn-outline-danger">Cancelar</a>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+	<footer th:replace="base::footer"></footer>
+</body>
+</html>
+
+
+
+
+
+
