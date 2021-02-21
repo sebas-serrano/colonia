@@ -16,12 +16,16 @@ import com.colonia.model.Grupo;
 import com.colonia.model.Profesor;
 import com.colonia.service.GrupoService;
 import com.colonia.service.ProfesorService;
+import com.colonia.service.SendMailService;
 
 @Controller
 public class GruposControler {
 	
 	@Autowired
 	private GrupoService grupoService;
+	
+	@Autowired
+	private SendMailService sendMailService;
 	
 	@Autowired
 	private ProfesorService profesorService;
@@ -84,6 +88,15 @@ public class GruposControler {
 	  BindingResult result, Model model) {
 	    grupoService.saveGrupo(grupo);
 	    return "redirect:/listGrupos";
+	}
+	
+	
+	@GetMapping("/sendMail")
+	public String sendMail() {
+		//model.addAttribute("grupos", sendMailService.sendEmail());
+		//return sendMailService.sendEmail("", "", "");
+		return sendMailService.sendEmail2();
+		
 	}
 	
 
