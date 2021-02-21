@@ -6,7 +6,6 @@ import javax.mail.internet.MimeMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
@@ -22,23 +21,11 @@ public class SendMailServiceImpl implements SendMailService {
 	@Autowired
 	private JavaMailSender mailSender;
 
-	// Pasamos por parametro: destinatario, asunto y el mensaje
-	public String sendEmail(String to, String subject, String content) {
-
-		SimpleMailMessage email = new SimpleMailMessage();
-
-		email.setTo(to);
-		email.setSubject(subject);
-		email.setText(content);
-
-		mailSender.send(email);
-		return "OK";
-	}
 
 	@Override
 	public String sendEmail2() {
 		LOGGER.info("EmailBody: {}", "");
-		return sendEmailTool("","serranoavila@gmail.com","");
+		return sendEmailTool("te amo chancho malo","maeugeniasurin@gmail.com","te amo");
 	}
 
 	private String sendEmailTool(String textMessage, String email, String subject) {
