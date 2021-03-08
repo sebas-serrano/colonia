@@ -26,6 +26,8 @@ public class ColoniaController {
 		return "index";
 	}
 
+	
+	
 	/**
 	 * 
 	 * Gestion de  Alumnos
