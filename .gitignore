@@ -37,3 +37,5 @@ hs_err_pid*
 .metadata/.plugins/org.eclipse.pde.core/.cache/clean-cache.properties
 .metadata/.plugins/org.eclipse.tips.ide/dialog_settings.xml
 .metadata/.plugins/org.eclipse.ui.ide/dialog_settings.xml
+
+\.metadata/\.plugins/org\.eclipse\.core\.resources/\.safetable/org\.eclipse\.core\.resources
